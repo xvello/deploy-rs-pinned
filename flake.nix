@@ -30,14 +30,7 @@
     {
       deploy-rs = {
 
-        deploy-rs = final.rustPlatform.buildRustPackage (darwinOptions // {
-          pname = "deploy-rs";
-          version = "0.1.0";
-
-          src = ./.;
-
-          cargoLock.lockFile = ./Cargo.lock;
-        }) // { meta.description = "A Simple multi-profile Nix-flake deploy tool"; };
+        deploy-rs = prev.deploy-rs; # sourced from nixpkgs
 
         lib = rec {
 
